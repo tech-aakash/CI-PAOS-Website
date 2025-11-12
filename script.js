@@ -1,4 +1,4 @@
-// Smooth scroll (optional enhancement)
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     e.preventDefault();
@@ -8,6 +8,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Registration button
 document.querySelector(".register-btn").addEventListener("click", () => {
   alert("Registration will open soon! Stay tuned.");
 });

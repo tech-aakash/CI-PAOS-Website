@@ -7,92 +7,1020 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #fafafa;
-  scroll-behavior: smooth;
+  color: #000;
+  background-color: #fffbea;
 }
 
-/* Navigation */
+/* Header */
 header {
-  background: #003366;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-nav ul {
+.logo-group {
   display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 10px;
+  align-items: center;
+  gap: 15px;
 }
 
-nav ul li {
-  margin: 0 20px;
+.logo {
+  height: 55px;
+  background-color: white;        /* White background to stand out */
+  border-radius: 10px;            /* Rounded corners */
+  padding: 5px 8px;               /* Padding inside for balance */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);  /* Soft drop shadow */
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);         /* Slight zoom on hover */
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
 }
 
 nav ul li a {
-  color: white;
+  color: #ffcd00;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
-  border-bottom: 2px solid #ffcc00;
+  color: white;
+  border-bottom: 2px solid #ffcd00;
 }
 
 /* Hero */
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(to right, #003366, #004d99);
-  color: white;
+  background: #ffcd00;
+  color: #000;
 }
 
 .hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+  font-size: 2.8em;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
 /* Sections */
 section {
   padding: 60px 10%;
-  background-color: white;
-  margin-bottom: 10px;
+  background-color: #fff;
+  margin: 20px auto;
   border-radius: 8px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
 section h2 {
-  color: #003366;
-  border-left: 5px solid #ffcc00;
+  color: #000;
+  border-left: 6px solid #ffcd00;
   padding-left: 10px;
   margin-bottom: 20px;
 }
 
 ul {
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 /* Button */
 .register-btn {
-  background: #003366;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  background: #000;
+  color: #ffcd00;
+  padding: 12px 24px;
+  border: 2px solid #ffcd00;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .register-btn:hover {
-  background: #002244;
+  background: #ffcd00;
+  color: #000;
+}
+
+/* Agenda Tables */
+.agenda-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 50px 0;
+  font-size: 0.95rem;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.agenda-table th {
+  background-color: #000;
+  color: #ffcd00;
+  padding: 12px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.agenda-table td {
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  vertical-align: top;
+}
+
+.agenda-table tr:nth-child(even) {
+  background-color: #fffbea;
+}
+
+.agenda-table tr:hover {
+  background-color: #fffae0;
+  transition: 0.2s;
+}
+
+/* Venue Section Layout */
+.venue-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 25px;
+  align-items: stretch;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+/* Left side (stacked images) */
+.venue-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+.venue-img {
+  width: 100%;
+  height: 48%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+.venue-img:hover {
+  transform: scale(1.02);
+}
+
+/* Right side (floor plan image) */
+.venue-right {
+  flex: 1 1 45%;
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.venue-layout {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+.venue-layout:hover {
+  transform: scale(1.02);
+}
+
+/* Campus Map */
+.map-container {
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* Mobile view */
+@media (max-width: 900px) {
+  .venue-flex {
+    flex-direction: column;
+  }
+  .venue-left, .venue-right {
+    max-width: 100%;
+  }
+  .venue-img, .venue-layout {
+    height: auto;
+  }
+}
+
+
+/* Hotels Section */
+#hotels {
+  margin-top: 70px;
+  background-color: #fff;
+  padding: 60px 10%;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+#hotels h2 {
+  border-left: 6px solid #ffcd00;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+#hotels p {
+  margin-bottom: 40px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Grid layout */
+.hotel-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.hotel-card {
+  flex: 1 1 30%;
+  max-width: 30%;
+  background: #fffbea;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 540px; /* uniform card height */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hotel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.hotel-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+/* Text content */
+.hotel-card h3 {
+  margin: 18px 20px 10px;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-height: 50px; /* keeps names aligned */
+}
+
+.hotel-card p {
+  margin: 5px 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.hotel-card p a {
+  color: #0044cc;
+  text-decoration: none;
+}
+
+.hotel-card p a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.hotel-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0 25px;
+}
+
+.hotel-links a {
+  background: linear-gradient(135deg, #ffcd00 0%, #ffdb4d 100%);
+  color: #000;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.hotel-links a:hover {
+  background: #000;
+  color: #ffcd00;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hotel-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Childcare Section */
+#childcare {
+  margin-top: 70px;
+  background-color: #fff;
+  padding: 60px 10%;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+#childcare h2 {
+  border-left: 6px solid #ffcd00;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+#childcare p {
+  margin-bottom: 40px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Grid layout */
+.childcare-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.childcare-card {
+  flex: 1 1 30%;
+  max-width: 30%;
+  background: #fffbea;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 520px; /* ensures same height */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.childcare-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Image */
+.childcare-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Text formatting */
+.childcare-card h3 {
+  margin: 18px 20px 10px;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-height: 50px; /* aligns titles */
+}
+
+.childcare-card p {
+  margin: 5px 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.childcare-card p a {
+  color: #0044cc;
+  text-decoration: none;
+}
+
+.childcare-card p a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.childcare-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0 25px;
+}
+
+.childcare-links a {
+  background: #ffcd00;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.childcare-links a:hover {
+  background: #000;
+  color: #ffcd00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .childcare-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .childcare-links {
+    flex-wrap: wrap;
+  }
+}
+
+/* Travel Section */
+#travel {
+  margin-top: 70px;
+  background-color: #fff;
+  padding: 60px 10%;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+#travel h2 {
+  border-left: 6px solid #ffcd00;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+#travel p {
+  margin-bottom: 25px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Fix spacing between airports and local transportation */
+#travel h3 {
+  margin-top: 50px; /* adds breathing space above new section headings */
+}
+
+#travel h3:first-of-type {
+  margin-top: 10px; /* keeps the first heading ("Nearby Airports") tighter */
+}
+
+/* Travel Cards */
+.travel-card {
+  background: #fffbea;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.travel-card h3 {
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.travel-links a {
+  background: #ffcd00;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.travel-links a:hover {
+  background: #000;
+  color: #ffcd00;
+}
+
+/* Parking Map Image */
+.travel-img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== AIRPORT SECTION - same style as Childcare ===== */
+.airport-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.airport-card {
+  flex: 1 1 30%;
+  max-width: 30%;
+  background: #fffbea;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 520px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.airport-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Image */
+.airport-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Text formatting */
+.airport-card h3 {
+  margin: 18px 20px 10px;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-height: 50px;
+}
+
+.airport-card p {
+  margin: 5px 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.airport-card p a {
+  color: #0044cc;
+  text-decoration: none;
+}
+
+.airport-card p a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.airport-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0 25px;
+}
+
+.airport-links a {
+  background: #ffcd00;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.airport-links a:hover {
+  background: #000;
+  color: #ffcd00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ===== TRANSPORT SECTION ===== */
+.transport-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.transport-card {
+  flex: 1 1 30%;
+  max-width: 30%;
+  background: #fffbea;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  padding: 20px;
+  transition: 0.3s ease;
+}
+
+.transport-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .airport-card, .transport-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .airport-links {
+    flex-wrap: wrap;
+  }
+
+  .travel-img {
+    max-width: 100%;
+  }
+}
+
+/* Places to Visit Section */
+#places {
+  margin-top: 70px;
+  background-color: #fff;
+  padding: 60px 10%;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+#places h2 {
+  border-left: 6px solid #ffcd00;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+#places p {
+  margin-bottom: 40px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Grid Layout */
+.places-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.place-card {
+  flex: 1 1 30%;
+  max-width: 30%;
+  background: #fffbea;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 520px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Image */
+.place-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Text Formatting */
+.place-card h3 {
+  margin: 18px 20px 10px;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-height: 50px;
+}
+
+.place-card p {
+  margin: 5px 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.place-card p a {
+  color: #0044cc;
+  text-decoration: none;
+}
+
+.place-card p a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.place-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0 25px;
+}
+
+.place-links a {
+  background: #ffcd00;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.place-links a:hover {
+  background: #000;
+  color: #ffcd00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Travel Guide Links */
+.travel-guides {
+  margin-top: 60px;
+}
+
+.travel-guides h3 {
+  margin-bottom: 15px;
+}
+
+.travel-guides ul {
+  list-style: none;
+  padding: 0;
+}
+
+.travel-guides li {
+  margin-bottom: 10px;
+}
+
+.travel-guides a {
+  color: #0044cc;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.travel-guides a:hover {
+  color: #000;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  .place-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .place-links {
+    flex-wrap: wrap;
+  }
+}
+
+/* Organization Committee */
+#committee {
+  margin-top: 70px;
+  background-color: #fff;
+  padding: 60px 10%;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+#committee h2 {
+  border-left: 6px solid #ffcd00;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+#committee p {
+  margin-bottom: 40px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Committee Grid */
+.committee-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* Organization Committee */
+#committee {
+  margin-top: 70px;
+  background-color: #fff;
+  padding: 60px 10%;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+#committee h2 {
+  border-left: 6px solid #ffcd00;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+#committee > p {
+  margin-bottom: 40px;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Grid Layout */
+.committee-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Cards */
+.committee-card {
+  flex: 1 1 220px;
+  max-width: 220px;
+  background: #fffbea;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 25px 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+}
+
+.committee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Typography */
+.committee-card h3 {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.committee-card p {
+  color: #333;
+  font-size: 0.9rem;
+  margin: 3px 0;
+  line-height: 1.4;
+}
+
+.committee-card .role {
+  color: #555;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+/* Responsive Layout */
+@media (max-width: 1200px) {
+  .committee-card {
+    flex: 1 1 30%;
+    max-width: 30%;
+  }
+}
+
+@media (max-width: 900px) {
+  .committee-card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .committee-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Technical & Support Committee */
+#tech-support {
+  margin-top: 60px;
+  background-color: #fff;
+  padding: 40px 10%;
+  border-radius: 10px;
+}
+
+#tech-support h2 {
+  border-left: 6px solid #ffcd00;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+
+#tech-support .committee-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Reuse same card styling */
+#tech-support .committee-card {
+  flex: 1 1 220px;
+  max-width: 220px;
+  background: #fffbea;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 25px 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 160px;
+}
+
+#tech-support .committee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+#tech-support .committee-card h3 {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+#tech-support .committee-card p {
+  color: #333;
+  font-size: 0.9rem;
+  margin: 3px 0;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #tech-support .committee-card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  #tech-support .committee-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 /* Footer */
 footer {
-  background: #003366;
-  color: white;
+  background: #000;
+  color: #ffcd00;
   text-align: center;
   padding: 20px;
   margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .logo {
+    height: 40px;
+  }
 }
