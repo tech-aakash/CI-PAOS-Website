@@ -61,12 +61,19 @@ nav ul li a:hover {
   border-bottom: 2px solid #ffcd00;
 }
 
+/* Hero Wrapper */
+.hero-wrapper {
+  padding: 20px 10%;
+}
+
 /* Hero */
 .hero {
   text-align: center;
   padding: 80px 20px;
   background: #ffcd00;
   color: #000;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
 .hero h1 {
@@ -75,7 +82,7 @@ nav ul li a:hover {
   font-weight: 700;
 }
 
-/* Sections */
+/* Sections (normal content blocks) */
 section {
   padding: 60px 10%;
   background-color: #fff;
@@ -95,6 +102,7 @@ ul {
   margin-left: 25px;
 }
 
+
 /* Button */
 .register-btn {
   background: #000;
@@ -110,6 +118,71 @@ ul {
 .register-btn:hover {
   background: #ffcd00;
   color: #000;
+}
+
+/* Important Dates Section */
+#dates {
+  margin-top: 70px;
+  background-color: #fff;
+  padding: 60px 10%;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+#dates h2 {
+  border-left: 6px solid #ffcd00;
+  padding-left: 10px;
+  margin-bottom: 25px;
+}
+
+/* Dates Grid */
+.dates-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* Date Cards */
+.date-card {
+  flex: 1 1 30%;
+  max-width: 30%;
+  background: #fffbea;
+  border-radius: 14px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.date-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.date-card h3 {
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.date-card p {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .date-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 /* Agenda Tables */
@@ -150,25 +223,19 @@ ul {
 /* Venue Section Layout */
 .venue-flex {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 25px;
-  align-items: stretch;
   justify-content: center;
   margin: 30px 0;
 }
 
-/* Left side (stacked images) */
+/* Single image container */
 .venue-left {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  flex: 1 1 45%;
-  max-width: 45%;
+  max-width: 70%; /* adjust width if you want larger or smaller */
 }
 
+/* Venue Image */
 .venue-img {
   width: 100%;
-  height: 48%;
+  height: auto;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
@@ -179,35 +246,31 @@ ul {
   transform: scale(1.02);
 }
 
-/* Right side (floor plan image) */
-.venue-right {
-  flex: 1 1 45%;
-  max-width: 45%;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-}
-
+/* Remove right-side styles completely */
+.venue-right,
 .venue-layout {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease;
+  display: none !important;
 }
 
-.venue-layout:hover {
-  transform: scale(1.02);
+/* Campus Map Link Button */
+.campus-map-link {
+  display: inline-block;
+  background: #ffcd00;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+  margin-top: 20px;
 }
 
-/* Campus Map */
-.map-container {
-  width: 100%;
-  margin-top: 30px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+.campus-map-link:hover {
+  background: #000;
+  color: #ffcd00;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
 }
 
 /* Mobile view */
@@ -223,119 +286,98 @@ ul {
   }
 }
 
-
-/* Hotels Section */
-#hotels {
+/* Unified 3-column Transportation Section */
+#transportation {
   margin-top: 70px;
   background-color: #fff;
   padding: 60px 10%;
   border-radius: 10px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
 }
 
-#hotels h2 {
+#transportation h2 {
   border-left: 6px solid #ffcd00;
   padding-left: 10px;
   margin-bottom: 20px;
 }
 
-#hotels p {
-  margin-bottom: 40px;
+#transportation p {
+  margin-bottom: 25px;
   font-size: 1rem;
   color: #333;
 }
 
-/* Grid layout */
-.hotel-grid {
+/* 3-column grid */
+.transport-3col-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 25px;
+  justify-content: space-between;
 }
 
-.hotel-card {
+/* Cards */
+.transport-card {
   flex: 1 1 30%;
   max-width: 30%;
   background: #fffbea;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 540px; /* uniform card height */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 540px; /* uniform height like hotel/childcare */
+  transition: 0.3s ease;
 }
 
-.hotel-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+.transport-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
-.hotel-img {
+/* Card Images */
+.transport-img-card {
   width: 100%;
   height: 230px;
   object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-/* Text content */
-.hotel-card h3 {
-  margin: 18px 20px 10px;
-  color: #000;
-  font-size: 1.1rem;
-  font-weight: 700;
-  min-height: 50px; /* keeps names aligned */
-}
-
-.hotel-card p {
-  margin: 5px 20px;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.hotel-card p a {
-  color: #0044cc;
-  text-decoration: none;
-}
-
-.hotel-card p a:hover {
-  text-decoration: underline;
-}
-
-/* Buttons */
-.hotel-links {
+/* Button Links */
+.transport-links {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin: 20px 0 25px;
+  gap: 12px;
+  margin: 20px 0;
 }
 
-.hotel-links a {
-  background: linear-gradient(135deg, #ffcd00 0%, #ffdb4d 100%);
+.transport-links a {
+  background: #ffcd00;
   color: #000;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 8px 18px;
+  border-radius: 20px;
   font-weight: 600;
-  letter-spacing: 0.3px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
 
-.hotel-links a:hover {
+.transport-links a:hover {
   background: #000;
   color: #ffcd00;
-  box-shadow: 0 5px 14px rgba(0,0,0,0.3);
   transform: translateY(-2px);
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .hotel-card {
+  .transport-card {
     flex: 1 1 100%;
     max-width: 100%;
   }
 }
+
+
 
 /* Childcare Section */
 #childcare {
@@ -457,64 +499,6 @@ ul {
   }
 }
 
-/* Travel Section */
-#travel {
-  margin-top: 70px;
-  background-color: #fff;
-  padding: 60px 10%;
-  border-radius: 10px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-}
-
-#travel h2 {
-  border-left: 6px solid #ffcd00;
-  padding-left: 10px;
-  margin-bottom: 20px;
-}
-
-#travel p {
-  margin-bottom: 25px;
-  font-size: 1rem;
-  color: #333;
-}
-
-/* Fix spacing between airports and local transportation */
-#travel h3 {
-  margin-top: 50px; /* adds breathing space above new section headings */
-}
-
-#travel h3:first-of-type {
-  margin-top: 10px; /* keeps the first heading ("Nearby Airports") tighter */
-}
-
-/* Travel Cards */
-.travel-card {
-  background: #fffbea;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-  padding: 20px;
-  margin-bottom: 40px;
-}
-
-.travel-card h3 {
-  color: #000;
-  margin-bottom: 10px;
-}
-
-.travel-links a {
-  background: #ffcd00;
-  color: #000;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.travel-links a:hover {
-  background: #000;
-  color: #ffcd00;
-}
 
 /* Parking Map Image */
 .travel-img {
@@ -676,7 +660,7 @@ ul {
   color: #333;
 }
 
-/* Grid Layout */
+/* Grid layout (same as childcare) */
 .places-grid {
   display: flex;
   flex-wrap: wrap;
@@ -684,7 +668,8 @@ ul {
   gap: 25px;
 }
 
-.place-card {
+/* Cards (same as childcare-card) */
+.places-card {
   flex: 1 1 30%;
   max-width: 30%;
   background: #fffbea;
@@ -698,20 +683,20 @@ ul {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.place-card:hover {
+.places-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }
 
-/* Image */
-.place-img {
+/* Image (same as childcare-img) */
+.places-img {
   width: 100%;
   height: 220px;
   object-fit: cover;
 }
 
-/* Text Formatting */
-.place-card h3 {
+/* Text formatting */
+.places-card h3 {
   margin: 18px 20px 10px;
   color: #000;
   font-size: 1.1rem;
@@ -719,91 +704,61 @@ ul {
   min-height: 50px;
 }
 
-.place-card p {
+.places-card p {
   margin: 5px 20px;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
-.place-card p a {
+.places-card p a {
   color: #0044cc;
   text-decoration: none;
 }
 
-.place-card p a:hover {
+.places-card p a:hover {
   text-decoration: underline;
 }
 
-/* Buttons */
-.place-links {
+/* Buttons (same as childcare-links) */
+.places-links {
   display: flex;
   justify-content: center;
   gap: 12px;
   margin: 20px 0 25px;
 }
 
-.place-links a {
+.places-links a {
   background: #ffcd00;
   color: #000;
-  text-decoration: none;
   padding: 8px 18px;
   border-radius: 20px;
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.2px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
 
-.place-links a:hover {
+.places-links a:hover {
   background: #000;
   color: #ffcd00;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transform: translateY(-2px);
 }
 
-/* Travel Guide Links */
-.travel-guides {
-  margin-top: 60px;
-}
-
-.travel-guides h3 {
-  margin-bottom: 15px;
-}
-
-.travel-guides ul {
-  list-style: none;
-  padding: 0;
-}
-
-.travel-guides li {
-  margin-bottom: 10px;
-}
-
-.travel-guides a {
-  color: #0044cc;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.travel-guides a:hover {
-  color: #000;
-}
-
-/* Responsive Layout */
+/* Responsive (same as childcare) */
 @media (max-width: 900px) {
-  .place-card {
+  .places-card {
     flex: 1 1 100%;
     max-width: 100%;
     min-height: auto;
   }
-
-  .place-links {
+  
+  .places-links {
     flex-wrap: wrap;
   }
 }
-
 /* Organization Committee */
 #committee {
   margin-top: 70px;
