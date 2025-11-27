@@ -11,17 +11,30 @@ body {
   background-color: #fffbea;
 }
 
+/* Lock all main content to fixed width */
+.page-container {
+  max-width: 1200px;     /* standard responsive container size */
+  width: 100%;
+  margin: 0 auto;        /* center on screen */
+}
+
 /* Header */
 header {
   background: #000;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;   /* Center everything */
   align-items: center;
   padding: 10px 5%;
   position: sticky;
   top: 0;
   z-index: 100;
 }
+
+/* Remove extra left-space the header had */
+.header-left {
+  display: none;  /* Hide the empty container */
+}
+
 
 .logo-group {
   display: flex;
@@ -42,13 +55,19 @@ header {
   transform: scale(1.05);         /* Slight zoom on hover */
 }
 
-/* Navigation */
+/* Navigation centered */
 nav ul {
   display: flex;
   list-style: none;
-  gap: 25px;
+  gap: 30px;
+  justify-content: center;   /* Center items inside nav */
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
+/* Nav links */
 nav ul li a {
   color: #ffcd00;
   text-decoration: none;
@@ -63,13 +82,13 @@ nav ul li a:hover {
 
 /* Hero Wrapper */
 .hero-wrapper {
-  padding: 20px 10%;
+  padding-top: 20px ;
 }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 80px 20px;
+  padding: 80px;
   background: #ffcd00;
   color: #000;
   border-radius: 8px;
@@ -78,8 +97,34 @@ nav ul li a:hover {
 
 .hero h1 {
   font-size: 2.8em;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   font-weight: 700;
+}
+
+.hero p {
+ margin-top: 20px;
+}
+
+/* HERO LOGO GROUP */
+.hero-logo-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.hero-logo {
+  height: 85px;                /* larger than header version */
+  background: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease;
+}
+
+.hero-logo:hover {
+  transform: scale(1.08);
 }
 
 /* Sections (normal content blocks) */
@@ -100,6 +145,10 @@ section h2 {
 
 ul {
   margin-left: 25px;
+}
+
+.italic-heading {
+  font-style: italic;
 }
 
 
@@ -145,8 +194,8 @@ ul {
 
 /* Date Cards */
 .date-card {
-  flex: 1 1 30%;
-  max-width: 30%;
+  flex: 1 1 20%;
+  max-width: 20%;
   background: #fffbea;
   border-radius: 14px;
   padding: 25px 20px;
@@ -224,19 +273,20 @@ ul {
 .venue-flex {
   display: flex;
   justify-content: center;
+  gap: 30px;
   margin: 30px 0;
 }
 
-/* Single image container */
-.venue-left {
-  max-width: 70%; /* adjust width if you want larger or smaller */
+/* Two side-by-side images */
+.venue-left, .venue-right {
+  flex: 1 1 45%;
+  max-width: 45%;
 }
 
-/* Venue Image */
 .venue-img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 350px;   /* ← set same height for both images */
+  object-fit: cover;  /* crop nicely */
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
   transition: transform 0.3s ease;
@@ -246,10 +296,15 @@ ul {
   transform: scale(1.02);
 }
 
-/* Remove right-side styles completely */
-.venue-right,
-.venue-layout {
-  display: none !important;
+/* Mobile view */
+@media (max-width: 900px) {
+  .venue-flex {
+    flex-direction: column;
+  }
+
+  .venue-left, .venue-right {
+    max-width: 100%;
+  }
 }
 
 /* Campus Map Link Button */
@@ -759,223 +814,117 @@ ul {
     flex-wrap: wrap;
   }
 }
-/* Organization Committee */
+
 #committee {
-  margin-top: 70px;
-  background-color: #fff;
-  padding: 60px 10%;
-  border-radius: 10px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  text-align: left !important;
 }
 
-#committee h2 {
-  border-left: 6px solid #ffcd00;
-  padding-left: 10px;
-  margin-bottom: 20px;
+#committee p,
+#committee h3 {
+  text-align: left !important;
+  margin-left: 0 !important;
 }
 
-#committee p {
-  margin-bottom: 40px;
-  font-size: 1rem;
-  color: #333;
-}
 
-/* Committee Grid */
-.committee-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 25px;
-}
 
-/* Organization Committee */
-#committee {
-  margin-top: 70px;
-  background-color: #fff;
-  padding: 60px 10%;
-  border-radius: 10px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-}
-
-#committee h2 {
-  border-left: 6px solid #ffcd00;
-  padding-left: 10px;
-  margin-bottom: 20px;
-}
-
-#committee > p {
-  margin-bottom: 40px;
-  font-size: 1rem;
-  color: #333;
-  text-align: center;
-}
-
-/* Grid Layout */
-.committee-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-
-/* Cards */
-.committee-card {
-  flex: 1 1 220px;
-  max-width: 220px;
-  background: #fffbea;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 25px 15px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 180px;
-}
-
-.committee-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-}
-
-/* Typography */
-.committee-card h3 {
-  color: #000;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.committee-card p {
-  color: #333;
-  font-size: 0.9rem;
-  margin: 3px 0;
-  line-height: 1.4;
-}
-
-.committee-card .role {
-  color: #555;
-  font-style: italic;
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-}
-
-/* Responsive Layout */
-@media (max-width: 1200px) {
-  .committee-card {
-    flex: 1 1 30%;
-    max-width: 30%;
-  }
-}
-
-@media (max-width: 900px) {
-  .committee-card {
-    flex: 1 1 45%;
-    max-width: 45%;
-  }
-}
-
-@media (max-width: 600px) {
-  .committee-card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-
-/* Technical & Support Committee */
-#tech-support {
-  margin-top: 60px;
-  background-color: #fff;
-  padding: 40px 10%;
-  border-radius: 10px;
-}
-
-#tech-support h2 {
-  border-left: 6px solid #ffcd00;
-  padding-left: 10px;
-  margin-bottom: 30px;
-}
-
-#tech-support .committee-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-
-/* Reuse same card styling */
-#tech-support .committee-card {
-  flex: 1 1 220px;
-  max-width: 220px;
-  background: #fffbea;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 25px 15px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 160px;
-}
-
-#tech-support .committee-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-}
-
-#tech-support .committee-card h3 {
-  color: #000;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-#tech-support .committee-card p {
-  color: #333;
-  font-size: 0.9rem;
-  margin: 3px 0;
-  line-height: 1.4;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  #tech-support .committee-card {
-    flex: 1 1 45%;
-    max-width: 45%;
-  }
-}
-
-@media (max-width: 600px) {
-  #tech-support .committee-card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-
-/* Footer */
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background: #000;
   color: #ffcd00;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 15px 10px;
+  font-size: 0.95rem;
+  z-index: 200;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-  }
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-  .logo {
-    height: 40px;
-  }
+/* Add padding to bottom of page so content doesn't hide behind footer */
+body {
+  padding-bottom: 90px;   /* Adjust height equal to footer height */
+}
+
+footer a {
+  color: #ffcd00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Disclosure / Policies Section */
+#disclosure {
+  margin-top: 70px;
+  background: #fff;
+  padding: 60px 10%;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+#disclosure h2 {
+  border-left: 6px solid #ffcd00;
+  padding-left: 10px;
+  margin-bottom: 25px;
+}
+
+/* Expandable boxes */
+.disclosure-box {
+  background: #fffbea;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  padding: 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* Summary button styling */
+.disclosure-box > summary {
+  cursor: pointer;
+  padding: 15px 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+  background: #ffcd00;
+  list-style: none;
+}
+
+.disclosure-box > summary::-webkit-details-marker {
+  display: none; /* hide arrow */
+}
+
+/* Add custom arrow */
+.disclosure-box > summary::after {
+  content: "➕";
+  float: right;
+  font-size: 1.1rem;
+}
+
+.disclosure-box[open] > summary::after {
+  content: "➖";
+}
+
+/* Expanded content */
+.disclosure-content {
+  padding: 20px 20px 25px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.disclosure-content h4 {
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.disclosure-content a {
+  color: #0044cc;
+  text-decoration: none;
+}
+
+.disclosure-content a:hover {
+  text-decoration: underline;
 }
