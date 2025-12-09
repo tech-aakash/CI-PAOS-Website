@@ -35,6 +35,7 @@ header {
   display: none;  /* Hide the empty container */
 }
 
+
 .logo-group {
   display: flex;
   align-items: center;
@@ -149,6 +150,7 @@ ul {
 .italic-heading {
   font-style: italic;
 }
+
 
 /* Button */
 .register-btn {
@@ -438,6 +440,8 @@ ul {
   }
 }
 
+
+
 /* Childcare Section */
 #childcare {
   margin-top: 70px;
@@ -557,6 +561,7 @@ ul {
     flex-wrap: wrap;
   }
 }
+
 
 /* Parking Map Image */
 .travel-img {
@@ -828,6 +833,8 @@ ul {
   margin-left: 0 !important;
 }
 
+
+
 footer {
   position: fixed;
   bottom: 0;
@@ -928,191 +935,4 @@ footer a:hover {
 
 .disclosure-content a:hover {
   text-decoration: underline;
-}
-
-/* ============================
-   MOBILE & TABLET RESPONSIVE
-   (new additions)
-   ============================ */
-
-/* Up to tablets / small laptops */
-@media (max-width: 900px) {
-
-  /* Container fills screen better */
-  .page-container {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-
-  /* Header / nav */
-  header {
-    padding: 8px 10px;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 0.85rem;
-  }
-
-  /* Hero */
-  .hero {
-    padding: 40px 16px;
-  }
-
-  .hero-logo-group {
-    gap: 12px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-  }
-
-  .hero-logo {
-    height: 65px;
-    padding: 8px 10px;
-  }
-
-  .hero h1 {
-    font-size: 1.7rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  /* Sections */
-  section,
-  #dates,
-  #transportation,
-  #childcare,
-  #places,
-  #disclosure {
-    padding: 30px 6%;
-    margin: 15px auto;
-  }
-
-  section h2 {
-    font-size: 1.3rem;
-  }
-
-  section p {
-    font-size: 0.95rem;
-  }
-
-  /* Important dates cards */
-  .dates-grid {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .date-card {
-    max-width: 100%;
-    flex: 1 1 100%;
-    text-align: left;
-  }
-
-  /* Tables: allow horizontal scroll */
-  .agenda-table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    font-size: 0.85rem;
-  }
-
-  .agenda-table th,
-  .agenda-table td {
-    padding: 8px 10px;
-  }
-
-  /* Venue images */
-  .venue-img {
-    height: 240px;
-  }
-
-  /* 3-column grids → stack */
-  .transport-3col-grid,
-  .childcare-grid,
-  .places-grid {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .transport-card,
-  .childcare-card,
-  .places-card {
-    max-width: 100%;
-    flex: 1 1 100%;
-    min-height: auto;
-  }
-
-  /* Buttons inside cards */
-  .transport-links,
-  .childcare-links,
-  .places-links {
-    flex-wrap: wrap;
-  }
-
-  /* Parking image */
-  .travel-img {
-    max-width: 100%;
-  }
-
-  /* Committee text tweaks */
-  #committee p {
-    font-size: 0.95rem;
-  }
-
-  /* Disclosure boxes */
-  .disclosure-content {
-    font-size: 0.9rem;
-  }
-
-  /* Footer */
-  footer {
-    font-size: 0.8rem;
-    padding: 10px 6px;
-  }
-}
-
-/* Extra small screens (very narrow phones) */
-@media (max-width: 480px) {
-  nav ul {
-    justify-content: center;
-    gap: 6px;
-    font-size: 0.75rem;
-  }
-
-  .hero {
-    padding: 30px 12px;
-  }
-
-  .hero-logo {
-    height: 55px;
-  }
-
-  .hero h1 {
-    font-size: 1.4rem;
-  }
-
-  .hero p {
-    font-size: 0.85rem;
-  }
-
-  section,
-  #dates,
-  #transportation,
-  #childcare,
-  #places,
-  #disclosure {
-    padding: 24px 5%;
-  }
-
-  .campus-map-link {
-    width: 100%;
-    text-align: center;
-  }
-
-  footer {
-    font-size: 0.75rem;
-  }
 }
